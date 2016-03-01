@@ -8,6 +8,9 @@
     "express"    : "4.13.4",
     "request"    : "2.69.0",
     "cheerio"    : "0.20.0",
-    "phantom"    : "2.0.2"
+    "phantom"    : "2.0.2",
+    "jsdom"      : "8.1.0",
+    "casper"     : "0.1.1",
+    "spooky"     : "0.2.5"
   }
 }
