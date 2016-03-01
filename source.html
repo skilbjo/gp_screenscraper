@@ -1,0 +1,371 @@
+
+
+ <html>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <head>
+ 
+ <style id="antiClickjack">body{display:none !important;}</style>
+ <script type="text/javascript">
+     if (self === top) {
+         var antiClickjack = document.getElementById("antiClickjack");
+         antiClickjack.parentNode.removeChild(antiClickjack);
+     } else {
+         top.location = self.location;
+     }
+ </script>
+
+ <script type="text/javascript">
+     //<![CDATA[
+ function dynaDivSize(divid) {
+     var cl = document.getElementById(divid);
+     var winWidth, winHeight, d=document;
+     if (typeof window.innerWidth!='undefined') {
+      winWidth = window.innerWidth;
+      winHeight = window.innerHeight;
+     } else {
+      if (d.documentElement &&
+       typeof d.documentElement.clientWidth!='undefined' &&
+        d.documentElement.clientWidth!=0) {
+       winWidth = d.documentElement.clientWidth;
+       winHeight = d.documentElement.clientHeight;
+      } else {
+       if (d.body &&
+        typeof d.body.clientWidth!='undefined') {
+        winWidth = d.body.clientWidth;
+        winHeight = d.body.clientHeight;
+       }
+      }
+     }
+     cl.style.width = winWidth - 15;
+     cl.style.width = "100%";
+ }
+     //]]>
+ </script>
+ 
+ <script type="text/javaScript">
+     var imageLocation = "";
+     function setImageLocation(location)
+     {
+       imageLocation = location;
+     }
+
+     function openLegal() {
+         var win = window.open("", '', 'scrollbars=yes, menubar=no, height=600, width=800, resizable=yes, toolbar=no, location=no, status=no');
+         return false;
+     }
+ </script>
+ 
+ 
+ 
+ 
+ <script type="text/javascript" src="/ram/jsp/RoboHelp_CSH.js?version=RAM6.12.2_036_2016/02/05 09:02_0"></script>
+
+ <script type="text/javaScript">
+     function openHelp() {
+
+         var id = "1";
+         var helpTypeID = "000";
+
+         if (helpTypeID == 004)  {
+             //OmniPay level
+             RH_ShowHelp(0, "/ram/ramstatic/robohelp/omnilevelhelp/!SSL!/WebHelp_Pro/omnilevelhelp.htm>RAMOnlineHelp", HH_HELP_CONTEXT, id);
+         } else if  (helpTypeID == 001)  {
+             //institution level
+             RH_ShowHelp(0, "/ram/ramstatic/robohelp/instlevelhelp/!SSL!/WebHelp_Pro/instlevelhelp.htm>RAMOnlineHelp", HH_HELP_CONTEXT, id);
+         } else if  (helpTypeID == 002)  {
+             //merchant level
+             RH_ShowHelp(0, "/ram/ramstatic/robohelp/merchlevelhelp/!SSL!/WebHelp_Pro/merchlevelhelp.htm>RAMOnlineHelp", HH_HELP_CONTEXT, id);
+         } else if  (helpTypeID == 003)  {
+             //client level
+             RH_ShowHelp(0, "/ram/ramstatic/robohelp/" + ""  + "/clientlevelhelp/!SSL!/WebHelp_Pro/clientlevelhelp.htm>RAMOnlineHelp", HH_HELP_CONTEXT, id);
+         }
+         return false;
+     }
+
+ </script><script type="text/javascript">
+    
+    var bannerHdr = new Object();
+    bannerHdr.add = "Add";
+    bannerHdr.update = "Update";
+    bannerHdr.cancel = "Cancel";
+    bannerHdr.error = "Error";
+    bannerHdr.editFavourite = "Edit Favourite";
+    bannerHdr.delFavourite = "Delete Favourite";
+    bannerHdr.copyMerchNo = "Copy Merchant Number";
+    bannerHdr.copyOurRef = "Copy Our Reference";
+    bannerHdr.selectAccount = "Select Account";
+    bannerHdr.generatePin = "Generate PIN";
+    bannerHdr.verifyPin = "Verify PIN";
+    
+    var bannerMsg = new Object();
+    bannerMsg.favouritePresent = "is already in your favourites list with an alias of";
+    bannerMsg.errAddFavourite = "Error attempting to add favourite!";
+    bannerMsg.errEditFavourite = "Error updating favourite!";
+    bannerMsg.addCurrentPage = "Add Current Page";
+    bannerMsg.errDelFavourite = "Error deleting favourite";
+    bannerMsg.errGetFavourites = "Error retrieving favourites list!";
+    bannerMsg.rightClickFavourites = "Right click on a Favourite to Edit/Delete";
+    bannerMsg.noResFound = "No Results Found";
+    bannerMsg.errSearchTradeNames = "Error searching for trade names!";
+    bannerMsg.errSearchTradeName = "Error search trade name";
+
+    
+    
+    var multiSelDropdown = new Object();
+    multiSelDropdown.checkAll = "Check All";
+    multiSelDropdown.uncheckAll = "Uncheck All";
+    multiSelDropdown.selectedText = "# selected";
+    multiSelDropdown.noneSelectedText = "All";
+</script> 
+<!-- YUI style sheets -->
+<link rel="stylesheet" type="text/css" media="all" href="/ram/ramstatic/yui_2.9.0/build/container/assets/container.css">
+<link rel="stylesheet" type="text/css" media="all" href="/ram/ramstatic/yui_2.9.0/build/treeview/assets/skins/sam/treeview.css">
+<link rel="stylesheet" type="text/css" media="all" href="/ram/ramstatic/yui_2.9.0/build/menu/assets/skins/sam/menu.css">
+<link rel="stylesheet" type="text/css" media="all" href="/ram/ramstatic/yui_2.9.0/build/button/assets/skins/sam/button.css">
+<link rel="stylesheet" type="text/css" media="all" href="/ram/ramstatic/yui_2.9.0/build/autocomplete/assets/skins/sam/autocomplete.css">
+ <!-- Banner style sheets -->
+<link rel="stylesheet" type="text/css" href="/ram/ramstatic/style/commonBanner.css?version=RAM6.12.2_036_2016/02/05 09:02_0"/>
+<link rel="stylesheet" type="text/css" href="/ram/ramstatic/style/theme/blue/banner.css?version=RAM6.12.2_036_2016/02/05 09:02_0"/>
+<link rel="stylesheet" type="text/css" href=""/>
+ <!-- Common style sheets -->
+<link rel="stylesheet" type="text/css" media="all" href="/ram/ramstatic/style/commonStyle.css?version=RAM6.12.2_036_2016/02/05 09:02_0"/>
+<link rel="stylesheet" type="text/css" href="/ram/ramstatic/style/theme/blue/style.css?version=RAM6.12.2_036_2016/02/05 09:02_0"/>
+ <!-- Other? style sheets -->
+<link rel="stylesheet" type="text/css" media="all" href="/ram/ramstatic/style/datepicker.css?version=RAM6.12.2_036_2016/02/05 09:02_0"/>
+<link rel="stylesheet" type="text/css" media="screen" href="/ram/ramstatic/style/forscreen.css?version=RAM6.12.2_036_2016/02/05 09:02_0"/>
+<link rel="stylesheet" type="text/css" media="print" href="/ram/ramstatic/style/forprint.css?version=RAM6.12.2_036_2016/02/05 09:02_0"/>  
+<link rel="stylesheet" type="text/css" media="all" href="/ram/ramstatic/yui_2.9.0/build/fonts/fonts.css">
+<!-- YUI JavaScript -->
+<script type="text/javascript" src="/ram/ramstatic/yui_2.9.0/build/utilities/utilities.js"></script>
+<script type="text/javascript" src="/ram/ramstatic/yui_2.9.0/build/yahoo/yahoo-min.js"></script>
+<script type="text/javascript" src="/ram/ramstatic/yui_2.9.0/build/event/event-min.js"></script>
+<script type="text/javascript" src="/ram/ramstatic/yui_2.9.0/build/dom/dom-min.js"></script>
+<script type="text/javascript" src="/ram/ramstatic/yui_2.9.0/build/json/json-min.js"></script>
+<script type="text/javascript" src="/ram/ramstatic/yui_2.9.0/build/container/container_core-min.js"></script>
+<script type="text/javascript" src="/ram/ramstatic/yui_2.9.0/build/container/container-min.js"></script>
+<script type="text/javascript" src="/ram/ramstatic/yui_2.9.0/build/menu/menu-min.js"></script>
+<script type="text/javascript" src="/ram/ramstatic/yui_2.9.0/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="/ram/ramstatic/yui_2.9.0/build/element/element-min.js"></script>
+<script type="text/javascript" src="/ram/ramstatic/yui_2.9.0/build/button/button-min.js"></script>
+<script type="text/javascript" src="/ram/ramstatic/yui_2.9.0/build/treeview/treeview-min.js"></script>
+<script type="text/javascript" src="/ram/ramstatic/yui_2.9.0/build/animation/animation-min.js"></script>
+<script type="text/javascript" src="/ram/ramstatic/yui_2.9.0/build/datasource/datasource-min.js"></script>
+<script type="text/javascript" src="/ram/ramstatic/yui_2.9.0/build/autocomplete/autocomplete-min.js"></script>
+<!-- General RAM Javascript -->
+<script type="text/javascript" src="/ram/ramstatic/omni_js/utility/datepicker.js?version=RAM6.12.2_036_2016/02/05 09:02_0"></script>
+<script type="text/javascript" src="/ram/ramstatic/omni_js/yui/ajax-call-template.js?version=RAM6.12.2_036_2016/02/05 09:02_0"></script>
+<!-- RAM Banner JavaScript -->
+<script type="text/javascript" src="/ram/ramstatic/omni_js/banner/omni_dialog.js?version=RAM6.12.2_036_2016/02/05 09:02_0"></script>
+<script type="text/javascript" src="/ram/ramstatic/omni_js/banner/omni_treeview.js?version=RAM6.12.2_036_2016/02/05 09:02_0"></script>
+<script type="text/javascript" src="/ram/ramstatic/omni_js/banner/omni_menu.js?version=RAM6.12.2_036_2016/02/05 09:02_0"></script>
+<script type="text/javascript" src="/ram/ramstatic/omni_js/banner/omni_selection.js?version=RAM6.12.2_036_2016/02/05 09:02_0"></script>
+<script type="text/javascript" src="/ram/ramstatic/omni_js/banner/omni_toolbar.js?version=RAM6.12.2_036_2016/02/05 09:02_0"></script>
+
+ <title>Online Account Information</title>
+ <script type="text/javascript">
+ //<![CDATA[
+ function setCmd(nextpage,cmdvalue)
+ {
+    document.menu.nextpage.value = nextpage;
+    document.menu.cmd.value = cmdvalue;
+ }
+ function showPage(url, width, height, options)
+ {
+   Win = window.open(url,"ShowPageWindow","width=" + width + ",height=" + height + ( (options!=null) ? ("," + options) : "" ));
+   Win.focus();
+ }
+ function showDetails(url)
+ {
+   showPage(url,'800','400','toolbar=no,location=no,menubar=no,scrollbars=yes,status=no,resizable=no');
+ }
+ function showDownload(url)
+ {
+   showPage(url,'400','190','toolbar=no,location=no,menubar=no,scrollbars=yes,status=no,resizable=yes');
+ }
+ function showWThru(url)
+ {
+   showPage(url,'800','700','toolbar=no,location=no,menubar=no,scrollbars=yes,status=yes,resizable=yes');
+ }
+ 
+ var jsthisPage = "MERCHANT_DETAILS";
+
+ //]]>
+ </script>
+<script type="text/javascript">
+
+</script>
+ <script type="text/javascript">setImageLocation("/ram/ramstatic/");</script>
+ 
+ <script type="text/javascript">
+ var submitForm = false;
+ function disable(cmdvalue){
+     if (document.all || document.getElementById){
+         var el = document.getElementById(cmdvalue);
+         if (el){  el.disabled=true; }
+     }
+ }
+
+ function submitBtnAndDisable(vCheck, nextpage, cmdvalue){
+     if(vCheck){
+         disable(cmdvalue);
+     }
+     submitBtn(vCheck, nextpage, cmdvalue);
+     document.menu.submit();
+     return true;
+ }
+
+ function submitBtn(vCheck, nextpage, cmdvalue){
+     document.menu.nextpage.value = nextpage;
+     document.menu.cmd.value = cmdvalue;
+     if(vCheck){
+         submitForm=true;
+         return submitForm;
+     }else{
+         return false;
+     }
+ }
+
+ function changeSubmitBan(nextpage, cmdvalue) {
+     document.banmenu.nextpage.value = nextpage;
+     document.banmenu.cmd.value = cmdvalue;
+     document.banmenu.submit();
+     return true;
+ }
+
+function changeInst() {
+    document.banmenu.nextpage.value = '';
+    document.banmenu.cmd.value = 'chgInstId';
+    document.banmenu.submit();
+}
+
+var onClickChangeInst = function() {
+    changeInst();
+};
+
+var onClickChangeAcct = function() {
+    document.banmenu.nextpage.value = jsthisPage;
+    document.banmenu.cmd.value = 'chgAcc';
+};
+
+initSelectionBox(
+    onClickChangeInst,
+    onClickChangeAcct,
+    "true",
+    "false",
+    "false",
+    "",
+    "");
+
+YAHOO.util.Event.onContentReady("toolbar-inst-list", function () {
+    YAHOO.omnipay.instMenu = new YAHOO.widget.Menu("toolbar-inst-list", {
+        context: [
+            "selectinst",
+            "tr",
+            "br",
+            ["beforeShow", "windowResize"]
+        ]
+    });
+
+    YAHOO.omnipay.instMenu.render();
+});
+
+function onClickSelectInstitution() {
+    YAHOO.omnipay.instMenu.show();
+}
+
+/* temp function for select institution on toolbar */
+function selectChangeInst(instId) {
+    document.getElementById("selectedinst").value = instId;
+    YAHOO.omnipay.changeInst();
+}
+
+</script>
+
+
+</head>
+<body class="yui-skin-sam">
+<script type="text/javascript">
+function showPopupSpecific(url, winname, width, height, scrollbars) {
+    var winprops;
+    var winl = (screen.width - width) / 2;
+    var wint = (screen.height - height) / 2;
+    if (scrollbars) {
+    	winprops = 'height='+height+',width='+width+',top='+wint+',left='+winl+',scrollbars=yes,resizable';
+    } else {
+    	winprops = 'height='+height+',width='+width+',top='+wint+',left='+winl+',resizable';
+    }
+    var pwin = window.open(url, winname, winprops); 
+    pwin.focus();
+}
+
+function showPopup(url, width, height, scrollbars) { 
+    showPopupSpecific(url, '_blank', width, height, scrollbars);
+}
+</script>
+</div>
+<div id="rh-col" class="clear">
+    <div id="idtopmessage" class="clear hidden ">
+        
+    </div>
+    <div style="padding: 0; margin: 0; clear:both;">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+    body, form {
+        margin: 0; _margin: 0;
+    }
+</style>
+<form name="menu" action="/ramtool" method="post">
+    <input type="hidden" name="prevpage" value="LOGIN" />
+    <input type="hidden" name="cmd" value="" />
+    <input type="hidden" name="nextpage" value="" />
+    <div class="login-header"><span></span></div>
+    <div class="login-body">
+        <div class="login-panel">
+            <h1>Login</h1>
+            <div>
+                <label class="login-label" for="69">Username</label>
+                <input id="69" name="69" type="text" autocomplete="off" value="" />
+                </div>
+            <div>
+                <label class="login-label" for="76">Password</label>
+                <input id="76" name="76" type="password" autocomplete="off" value="" />
+            </div>
+            <input class="login-submit" onclick="setCmd('WELCOME','login');" type="submit" value="Login" />
+            <input class="login-submit" onclick="setCmd('PASSWORD_RESET_USER_STEP','load');" type="submit" value="Forgotten Password" />
+        </div>
+    </div>
+    <div class="login-footer">
+        <p>Unauthorised access to this system is strictly forbidden. All user actions will be monitored.</p>
+    </div>
+</form>    
+<script type="text/javascript">
+    document.getElementById('69').focus();
+</script> 
+    </div>
+ </div>
+ </body>
+ </html>
+
