@@ -4,38 +4,53 @@ var fs = require('fs')
 	env = require('./lib/config/pass.js')
 	;
 
+/* Script to run in browser for jQuery <-> jQuery functionality 
+	var script = document.createElement("script");
+	  script.setAttribute("src", "https://code.jquery.com/jquery-latest.min.js");
+	  script.addEventListener('load', function() {
+	    var script = document.createElement("script");
+	    document.body.appendChild(script);
+	  }, false);
+	  document.body.appendChild(script);
+*/
+
 var login = function(cb){
 	request.post({
 		url: 'https://www.omnipaygroup.com/ramtool',
 		headers: {'content-type': 'application/x-www-form-urlencoded'},
 		body: "prevpage=LOGIN&cmd=login&nextpage=WELCOME&69="+env.user+"&76="+env.pass_html
 		}, function(err,res,html){
-
-			var $ = window.jQuery;
-
-
+			cb(html);	
 	});
 };
 
-login(function(html){
-	var newDoc = jsdom.env(html, function(err,window){
+var first_page = function(html,cb){
+	jsdom.env({
+		html: html,
+		scripts: ['https://code.jquery.com/jquery-latest.min.js'],
+		done: function(err,window){
+			var $ = window.jQuery,
+				interchange_report = $('a:contains("Presentment Interchange Summary")').attr('href'),
+				url = 'https://www.omnipaygroup.com/ramtool'+interchange_report
+				body = /\?(.*)/.exec(interchange_report)[1];
+				;
 
+			request.get({
+				url: url
+			}, function(err,res,html){
+				cb(html);
+			});
+
+		}
+	});
+};
+
+login(function(html,cb){
+	first_page(html,function(html){
+		console.log(html);		
 	});
 });
 
-// login(function(html){
-// 	request.post({
-// 		headers: {'content-type': 'application/x-www-form-urlencoded'},
-// 		url: "/ramtool?cmd=load&amp;nextpage=SECOND_CLEARING_LEVEL_SUMMARY&amp;45CC=32&amp;42f4=36&amp;37bls=f68ba5364382ec647bcb698a449fc07af15bded633e3ae4cb566c482a4dead4f6dbca1b42e43334502e71240b87621e436312bf6028c8cd8033f9a710c9ff465"
-// 	}, function(err,res,html){
-// 		console.log(html);
-// 	});
-// });
 
-// 		var $ = cheerio.load(html);
-// 		console.log(html);
-
-// 	}
-// });
 
 
